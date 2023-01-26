@@ -1,12 +1,14 @@
 package com.mjc.stage2.repository;
 
+import com.mjc.stage2.Observable;
+import com.mjc.stage2.Observer;
 import com.mjc.stage2.entity.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RectangleRepository {
+public class RectangleRepository implements Observable {
     private static RectangleRepository instance;
     private List<Rectangle> rectangles;
 
@@ -35,5 +37,20 @@ public class RectangleRepository {
 
     public List<Rectangle> getRectangles() {
         return Collections.unmodifiableList(rectangles);
+    }
+
+    @Override
+    public void addObserver(Observer o) {
+
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+
+    }
+
+    @Override
+    public void notifyObserver() {
+
     }
 }
